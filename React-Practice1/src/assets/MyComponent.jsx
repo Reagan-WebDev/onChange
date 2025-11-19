@@ -6,6 +6,7 @@ function MyComponent() {
     const[name, setName]=useState("");
     const[quantity, setQuantity]=useState();
     const[comment, setComment]=useState("");
+    const[shipping, setShipping]=useState("Delivery");
 
     function handleNameChange(event){
         setName(event.target.value);
@@ -18,6 +19,9 @@ function MyComponent() {
     function handleCommentChange(event){
         setComment(event.target.value);
     }
+    function handleShippingChange(event){
+        setShipping(event.target.value);
+    }
 
     return(
         <div>
@@ -29,6 +33,12 @@ function MyComponent() {
 
             <textarea value = {comment} onChange = {handleCommentChange}>{comment}</textarea>
             <p>Comment: {comment}</p>
+
+            <select value={shipping} onChange = {handleShippingChange}>
+                <option value="Pick-Up">Pick-Up</option>
+                <option value="Delivery">Delivery</option>
+            </select>
+            <p>Shipping: {shipping}</p>
 
         </div>
     );

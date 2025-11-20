@@ -7,6 +7,7 @@ function MyComponent() {
     const[quantity, setQuantity]=useState();
     const[comment, setComment]=useState("");
     const[shipping, setShipping]=useState("Delivery");
+    const[price, setPrice]=useState(0);
 
     function handleNameChange(event){
         setName(event.target.value);
@@ -21,6 +22,9 @@ function MyComponent() {
     }
     function handleShippingChange(event){
         setShipping(event.target.value);
+    }
+    function handlePriceChange(event){
+        setPrice(event.target.value);
     }
 
     return(
@@ -39,6 +43,9 @@ function MyComponent() {
                 <option value="Delivery">Delivery</option>
             </select>
             <p>Shipping: {shipping}</p>
+
+             <input type="number" value= {price} onChange = {handlePriceChange} />
+            <p className="myP">Price: Ksh. {price}</p>
 
         </div>
     );
